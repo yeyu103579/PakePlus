@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded",()=>{const t=document.createElement("script");t.src="https://www.googletagmanager.com/gtag/js?id=G-W5GKHM0893",t.async=!0,document.head.appendChild(t);const n=document.createElement("script");n.textContent="window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-W5GKHM0893');",document.body.appendChild(n)});// very important, if you don't know what it is, don't touch it
+window.addEventListener("DOMContentLoaded",()=>{const t=document.createElement("script");t.src="https://www.googletagmanager.com/gtag/js?id=G-W5GKHM0893",t.async=!0,document.head.appendChild(t);const n=document.createElement("script");n.textContent="window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-W5GKHM0893');",document.body.appendChild(n)});document.addEventListener('contextmenu',function(e){const target=e.target;const isInput=target.tagName==='INPUT'||target.tagName==='TEXTAREA';const isContentEditable=target.isContentEditable;if(!isInput&&!isContentEditable){e.preventDefault()}});// very important, if you don't know what it is, don't touch it
 // 非常重要，不懂代码不要动，这里可以解决80%的问题，也可以生产1000+的bug
 const hookClick = (e) => {
   const origin = e.target.closest('a')
@@ -49,13 +49,19 @@ const hideAll = () => {
  const sel4 = "#root > div > div.ant-layout.css-4ffzax > div > header.ant-layout-header.css-4ffzax.ant-pro-layout-header.ant-pro-layout-header-fixed-header.ant-pro-layout-header-fixed-header-action.ant-pro-layout-header-top-menu.ant-pro-layout-header-header.css-yrm7g7 > div > div > div.ant-pro-global-header-right-content.css-yrm7g7 > div > div > div > span > div > div:nth-child(2) > button"
 document.querySelector(sel4)?.style.setProperty('display', 'none', 'important')
   ///////////////////////////
-  // 5. 隐藏右上角第一个链接
-  const sel5 = "#root > div > div.ant-layout.css-4ffzax > div > header.ant-layout-header.css-4ffzax.ant-pro-layout-header.ant-pro-layout-header-fixed-header.ant-pro-layout-header-fixed-header-action.ant-pro-layout-header-top-menu.ant-pro-layout-header-header.css-yrm7g7 > div > div > div.ant-pro-global-header-right-content.css-yrm7g7 > div > div > div > span > div > div:nth-child(1) > a"
-  document.querySelector(sel5)?.style.setProperty('display', 'none', 'important')
+// 隐藏右上角第一个链接
+ const sel8 = "#root > div > div.ant-layout.css-4ffzax > div > header.ant-layout-header.css-4ffzax.ant-pro-layout-header.ant-pro-layout-header-fixed-header.ant-pro-layout-header-top-menu.ant-pro-layout-header-header.css-yrm7g7 > div > div > div.ant-pro-global-header-right-content.css-yrm7g7 > div > div > div > span > div > div:nth-child(1) > a"
+ document.querySelector(sel8)?.style.setProperty('display', 'none', 'important')
   //////////////////////////////////
   // 6. 隐藏底部 footer
   document.querySelector("#root > div > div.ant-layout.css-4ffzax > div > main > div > footer")?.style.setProperty('display', 'none', 'important')
-  }
+  // 7. 隐藏弹窗里的提示文字
+ const sel7 = "body > div:nth-child(5) > div > div.ant-modal-wrap.ant-modal-centered > div > div:nth-child(1) > div > div.ant-modal-body > form > div.mb-10.text-\\[\\#5c6063\\].ant-flex.css-4ffzax.ant-flex-align-center.ant-flex-justify-center"
+ document.querySelector(sel7)?.style.setProperty('display', 'none', 'important')
+// 隐藏右上角第二个按钮
+const selHeaderBtn2 = "#root > div > div.ant-layout.css-4ffzax > div > header.ant-layout-header.css-4ffzax.ant-pro-layout-header.ant-pro-layout-header-fixed-header.ant-pro-layout-header-top-menu.ant-pro-layout-header-header.css-yrm7g7 > div > div > div.ant-pro-global-header-right-content.css-yrm7g7 > div > div > div > span > div > div:nth-child(2) > button"
+document.querySelector(selHeaderBtn2)?.style.setProperty('display', 'none', 'important')
+}
 // 等 body 出现再启动监听
 const startObserver = () => {
 if (!document.body) return setTimeout(startObserver, 50)
